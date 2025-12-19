@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔法少女的禁忌书库</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+        :root {
+            --magic-dark: #1a1a1a;
+            --magic-orange: #f39c12;
+            --magic-cream: #f9f7f2;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--magic-cream);
+            color: var(--magic-dark);
+            overflow-x: hidden;
+        }
+
+        .font-magic { font-family: 'ZCOOL XiaoWei', serif; }
+
+        /* 打字机光标动画 */
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: var(--magic-orange);
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* 浮动卡片效果 */
+        .float { animation: floating 4s ease-in-out infinite; }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 魔法书卡片样式 */
+        .grimoire-card {
+            background: white;
+            border-left: 4px solid var(--magic-orange);
+            transition: all 0.3s ease;
+        }
+        .grimoire-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="text-2xl font-magic font-bold tracking-tighter">THE GRIMOIRE</div>
+        <div class="flex space-x-6 text-sm font-bold uppercase tracking-widest">
+            <a href="#home" class="hover:text-orange-500 transition">首页</a>
+            <a href="#bookshelf" class="hover:text-orange-500 transition">书架</a>
+        </div>
+    </nav>
+
+    <!-- 英雄展示区 -->
+    <main id="home" class="max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-16">
+        <div class="flex-1">
+            <div class="mb-4 flex items-center space-x-2">
+                <span class="h-[1px] w-12 bg-[#f39c12]"></span>
+                <span class="text-[#f39c12] font-bold tracking-widest text-xs">LEVEL 1 WIZARD</span>
+            </div>
+            
+            <!-- 打字机效果容器 -->
+            <h1 class="text-5xl md:text-6xl font-magic mb-6 h-32 md:h-auto">
+                <span id="typewriter" class="typewriter-cursor text-magic-dark"></span>
+            </h1>
+
+            <p class="text-gray-500 mb-8 text-lg leading-relaxed max-w-md">
+                欢迎来到我的魔法领地。我是照片中的那名探索者，正在编撰这本关于代码与创意的禁忌之书。
+            </p>
+        </div>
+
+        <div class="flex-1 w-full max-w-sm">
+            <div class="float relative group">
+                <div class="bg-zinc-900 p-4 rounded-3xl shadow-2xl overflow-hidden aspect-[4/5] relative">
+                    <!-- 这里请替换为你自己的图片路径或 Base64 -->
+                    <img src="1000243418.jpg" alt="My Portrait" class="w-full h-full object-cover rounded-2xl opacity-90 group-hover:opacity-100 transition duration-500" onerror="this.src='https://via.placeholder.com/400x500?text=Your+Photo'">
+                    
+                    <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white">
+                        <p class="text-[10px] opacity-60 tracking-[0.2em]">ACCESS GRANTED</p>
+                        <p class="font-bold tracking-widest">STARDUST SELLER</p>
+                    </div>
+                </div>
+                <!-- 装饰光晕 -->
+                <div class="absolute -z-10 top-0 left-0 w-full h-full bg-orange-500/10 blur-3xl rounded-full"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 魔法书列表区 -->
+    <section id="bookshelf" class="max-w-6xl mx-auto px-6 py-20 border-t border-orange-100">
+        <h2 class="text-3xl font-magic mb-12 flex items-center">
+            <i class="fas fa-scroll mr-4 text-orange-500"></i> Library
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- 魔法书 1 -->
+            <div class="grimoire-card p-6 rounded-xl shadow-sm">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 font-magic">《光影构图原理》</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">记载了如何利用镜头捕捉魔法瞬间的秘术，包含了构图、光比与色彩的调配方。</p>
+                    </div>
+                    <span class="bg-orange-50 p-3 rounded-lg text-orange-500"><i class="fas fa-camera-retro"></i></span>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#视觉系</span>
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#影像记录</span>
+                </div>
+            </div>
+
+            <!-- 魔法书 2 -->
+            <div class="grimoire-card p-6 rounded-xl shadow-sm">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 font-magic">《位面编织导论》</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">探究如何使用空间法术构建跨时空移动的学科。隶属空间魔法流。</p>
+                    </div>
+                    <span class="bg-blue-50 p-3 rounded-lg text-blue-500"><i class="fas fa-code"></i></span>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#架构</span>
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#前端魔法</span>
+                </div>
+            </div>
+
+            <!-- 魔法书 3 -->
+            <div class="grimoire-card p-6 rounded-xl shadow-sm">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 font-magic">《异世界交涉指南》</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">关于如何跨越语言障碍，在不同文化领域中自如穿梭的笔记。包含多门古老语言的入门法术。</p>
+                    </div>
+                    <span class="bg-purple-50 p-3 rounded-lg text-purple-500"><i class="fas fa-language"></i></span>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#社交</span>
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#跨界</span>
+                </div>
+            </div>
+             <!-- 魔法书 4 -->
+            <div class="grimoire-card p-6 rounded-xl shadow-sm">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 font-magic">《高等数学》</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Unknown</p>
+                    </div>
+                    <span class="bg-blue-50 p-3 rounded-lg text-blue-500"><i class="fas fa-code"></i></span>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#架构</span>
+                    <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-400">#前端魔法</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-300 text-[10px] tracking-[0.3em] uppercase">
+        <p>Spell-casted by Gemini / Hosted on GitHub</p>
+    </footer>
+
+    <script>
+        // 打字机逻辑
+        const text = "你好！我是代码与星辰的边界探索者。";
+        const typewriterElement = document.getElementById('typewriter');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typewriterElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 150); // 控制打字速度 (毫秒)
+            }
+        }
+
+        // 页面加载完成后启动打字机
+        window.onload = type;
+    </script>
+</body>
+</html>
+
