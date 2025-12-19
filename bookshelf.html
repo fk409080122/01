@@ -26,7 +26,7 @@
 
         /* 打字机光标动画 */
         .typewriter-cursor::after {
-            content: 'Waiting…|';
+            content: '|';
             animation: blink 1s infinite;
             color: var(--magic-orange);
         }
@@ -171,7 +171,7 @@
 
     <script>
         // 打字机逻辑
-        const text = "你好，这是凌海，她很可爱，也是看书的旅行者。";
+        const magicText = "你好,这是凌海,她很可爱,是旅行者.";
         const target = document.getElementById('typewriter');
         let i = 0;
 
